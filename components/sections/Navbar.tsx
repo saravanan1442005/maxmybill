@@ -15,8 +15,8 @@ export default function Navbar() {
                         <Image
                             src="/assets/logo.png"
                             alt="MAXmybill Logo"
-                            width={300}
-                            height={90}
+                            width={270}
+                            height={81}
                             style={{ objectFit: 'contain' }}
                         />
                     </Link>

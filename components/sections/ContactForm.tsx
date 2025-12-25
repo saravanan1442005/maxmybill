@@ -39,80 +39,100 @@ export default function ContactForm() {
 
     return (
         <section id="contact" className={`section ${styles.contact}`}>
-            <div className="container">
+            <div className={`container ${styles.container}`}>
                 <div className={styles.wrapper}>
-                    <div className={styles.info}>
-                        <h2>Get Started with MAXmybill</h2>
-                        <p>Ready to transform your business? Download the app or contact us for enterprise solutions.</p>
-                        <div className={styles.contactDetails}>
-                            <p><strong>Email:</strong> support@maxmybill.com</p>
-                            <p><strong>Phone:</strong> +91 123 456 7890</p>
+                    {/* Left Side - Form */}
+                    <div className={styles.formSection}>
+                        <div className={styles.header}>
+                            <h2>Contact us</h2>
                         </div>
+
+                        <form className={styles.form} onSubmit={handleSubmit}>
+                            <div className={styles.formGroup}>
+                                <div className={styles.inputWrapper}>
+                                    <span className={styles.inputIcon}>👤</span>
+                                    <input
+                                        type="text"
+                                        id="name"
+                                        name="name"
+                                        placeholder="Name"
+                                        value={formData.name}
+                                        onChange={handleChange}
+                                        required
+                                    />
+                                </div>
+                            </div>
+
+                            <div className={styles.formGroup}>
+                                <div className={styles.inputWrapper}>
+                                    <span className={styles.inputIcon}>✉️</span>
+                                    <input
+                                        type="email"
+                                        id="email"
+                                        name="email"
+                                        placeholder="Email"
+                                        value={formData.email}
+                                        onChange={handleChange}
+                                        required
+                                    />
+                                </div>
+                            </div>
+
+                            <div className={styles.formGroup}>
+                                <div className={styles.inputWrapper}>
+                                    <span className={styles.inputIcon}>📞</span>
+                                    <input
+                                        type="tel"
+                                        id="phone"
+                                        name="phone"
+                                        placeholder="Phone Number"
+                                        value={formData.phone}
+                                        onChange={handleChange}
+                                        required
+                                    />
+                                </div>
+                            </div>
+
+                            <div className={styles.formGroup}>
+                                <div className={styles.inputWrapper}>
+                                    <textarea
+                                        id="message"
+                                        name="message"
+                                        placeholder="Message"
+                                        value={formData.message}
+                                        onChange={handleChange}
+                                        rows={4}
+                                    ></textarea>
+                                </div>
+                            </div>
+
+                            <button
+                                type="submit"
+                                className={styles.submitBtn}
+                                disabled={status === 'loading'}
+                            >
+                                {status === 'loading' ? 'Sending...' : 'Send Message'}
+                            </button>
+
+                            {status === 'success' && (
+                                <p className={styles.success}>Message sent successfully!</p>
+                            )}
+                            {status === 'error' && (
+                                <p className={styles.error}>Something went wrong. Please try again.</p>
+                            )}
+                        </form>
                     </div>
 
-                    <form className={styles.form} onSubmit={handleSubmit}>
-                        <div className={styles.formGroup}>
-                            <label htmlFor="name">Name</label>
-                            <input
-                                type="text"
-                                id="name"
-                                name="name"
-                                value={formData.name}
-                                onChange={handleChange}
-                                required
-                            />
-                        </div>
-
-                        <div className={styles.formGroup}>
-                            <label htmlFor="email">Email</label>
-                            <input
-                                type="email"
-                                id="email"
-                                name="email"
-                                value={formData.email}
-                                onChange={handleChange}
-                                required
-                            />
-                        </div>
-
-                        <div className={styles.formGroup}>
-                            <label htmlFor="phone">Phone Number</label>
-                            <input
-                                type="tel"
-                                id="phone"
-                                name="phone"
-                                value={formData.phone}
-                                onChange={handleChange}
-                                required
-                            />
-                        </div>
-
-                        <div className={styles.formGroup}>
-                            <label htmlFor="message">Message</label>
-                            <textarea
-                                id="message"
-                                name="message"
-                                value={formData.message}
-                                onChange={handleChange}
-                                rows={4}
-                            ></textarea>
-                        </div>
-
-                        <button
-                            type="submit"
-                            className="btn btn-primary"
-                            disabled={status === 'loading'}
-                        >
-                            {status === 'loading' ? 'Sending...' : 'Send Message'}
-                        </button>
-
-                        {status === 'success' && (
-                            <p className={styles.success}>Message sent successfully!</p>
-                        )}
-                        {status === 'error' && (
-                            <p className={styles.error}>Something went wrong. Please try again.</p>
-                        )}
-                    </form>
+                    {/* Right Side - Illustration */}
+                    <div className={styles.illustrationSection}>
+                        <img
+                            src="/assets/contact-illustration.png"
+                            alt="Contact Illustration"
+                            className={styles.illustration}
+                        />
+                        <div className={styles.decorativeCircle1}></div>
+                        <div className={styles.decorativeCircle2}></div>
+                    </div>
                 </div>
             </div>
         </section>

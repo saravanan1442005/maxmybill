@@ -32,6 +32,16 @@ export default function Features() {
                                 height={560}
                                 className={styles.featureImage}
                             />
+                            {/* Decorative Floating Illustration */}
+                            <div className={styles.featureImageFloat}>
+                                <Image
+                                    src="/assets/inventory-illustration.png"
+                                    alt="Inventory Worker"
+                                    width={180}
+                                    height={180}
+                                    className={styles.illustrationFloat}
+                                />
+                            </div>
                         </div>
                     </div>
 
@@ -55,6 +65,16 @@ export default function Features() {
                                 height={560}
                                 className={styles.featureImage}
                             />
+                            {/* Decorative Floating Illustration */}
+                            <div className={`${styles.featureImageFloat} ${styles.floatLeft}`}>
+                                <Image
+                                    src="/assets/billing-illustration.png"
+                                    alt="Shopkeeper Billing"
+                                    width={180}
+                                    height={180}
+                                    className={styles.illustrationFloat}
+                                />
+                            </div>
                         </div>
                     </div>
 

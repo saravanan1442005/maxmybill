@@ -1,26 +1,72 @@
 .contact {
     background-color: var(--bg-light);
+    /* Changed from A9D1E8 to match theme */
+    padding: 80px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ... middle content skipped ... */
+
+.header h2 {
+    font-size: 2.5rem;
+    color: var(--primary-blue);
+    /* Changed from 2c3e50 */
+    margin-bottom: 2rem;
+    font-family: 'Outfit', sans-serif;
+}
+
+/* ... middle content skipped ... */
+
+.submitBtn {
+    background: var(--primary-blue);
+    /* Changed from cyan #00bcd4 */
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.2s, box-shadow 0.2s;
+    margin-top: 1rem;
+    box-shadow: 0 4px 6px rgba(47, 124, 246, 0.25);
+}
+
+.submitBtn:hover {
+    background: #1a68e6;
+    /* Darker shade of #2F7CF6 */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(47, 124, 246, 0.35);
+}
+
+.container {
+    max-width: 1000px;
 }
 
 .wrapper {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    background: white;
-    padding: 3rem;
+    background: #ffffff;
     border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    display: flex;
+    overflow: hidden;
+    position: relative;
 }
 
-.info h2 {
+/* Left - Form */
+.formSection {
+    flex: 1;
+    padding: 3rem;
+    z-index: 2;
+    background: white;
+}
+
+.header h2 {
+    font-size: 2.5rem;
     color: var(--primary-blue);
-    margin-bottom: 1.5rem;
-}
-
-.contactDetails {
-    margin-top: 2rem;
-    padding-top: 2rem;
-    border-top: 1px solid var(--border-color);
+    margin-bottom: 2rem;
+    font-family: 'Outfit', sans-serif;
 }
 
 .form {
@@ -30,44 +76,145 @@
 }
 
 .formGroup {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+    position: relative;
 }
 
-.formGroup label {
-    font-weight: 500;
-    color: var(--text-dark);
+.inputWrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.inputIcon {
+    position: absolute;
+    left: 20px;
+    font-size: 1.2rem;
+    color: #94a3b8;
+    z-index: 10;
 }
 
 .formGroup input,
 .formGroup textarea {
-    padding: 12px;
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
+    width: 100%;
+    padding: 15px 45px 15px 50px;
+    /* Space for icon */
+    background: #f1f5f9;
+    border: none;
+    border-radius: 50px;
+    /* Pill shape */
+    font-size: 1rem;
+    color: #475569;
     font-family: inherit;
-    transition: border-color 0.2s;
+    transition: all 0.3s ease;
+}
+
+.formGroup textarea {
+    border-radius: 20px;
+    /* Rounded card for textarea */
+    resize: none;
+    min-height: 120px;
+    padding-left: 25px;
+    /* Less padding, no icon for textarea usually */
 }
 
 .formGroup input:focus,
 .formGroup textarea:focus {
     outline: none;
-    border-color: var(--primary-blue);
+    background: #e2e8f0;
+    box-shadow: 0 0 0 4px rgba(47, 124, 246, 0.1);
+}
+
+.submitBtn {
+    background: var(--primary-blue);
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.2s, box-shadow 0.2s;
+    margin-top: 1rem;
+    box-shadow: 0 4px 6px rgba(47, 124, 246, 0.25);
+}
+
+.submitBtn:hover {
+    background: #1a68e6;
+    /* Darker shade of #2F7CF6 */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(47, 124, 246, 0.35);
+}
+
+/* Right - Illustration */
+.illustrationSection {
+    flex: 1;
+    background: #f8fafc;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.illustration {
+    width: 80%;
+    height: auto;
+    object-fit: contain;
+    z-index: 2;
+    animation: float 6s ease-in-out infinite;
+}
+
+/* Decorative circles */
+.decorativeCircle1 {
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: #ffe0b2;
+    /* Pastel Orange */
+    opacity: 0.5;
+}
+
+.decorativeCircle2 {
+    position: absolute;
+    bottom: 50px;
+    left: 50px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: #b2dfdb;
+    /* Pastel Green */
+    opacity: 0.5;
+}
+
+.success,
+.error {
+    text-align: center;
+    font-weight: 500;
 }
 
 .success {
     color: green;
-    margin-top: 1rem;
 }
 
 .error {
     color: red;
-    margin-top: 1rem;
 }
 
 @media (max-width: 768px) {
     .wrapper {
-        grid-template-columns: 1fr;
-        padding: 1.5rem;
+        flex-direction: column-reverse;
+        /* Illustrator on top on mobile? or bottom */
+    }
+
+    .illustrationSection {
+        padding: 2rem;
+        min-height: 300px;
+    }
+
+    .formSection {
+        padding: 2rem;
     }
 }

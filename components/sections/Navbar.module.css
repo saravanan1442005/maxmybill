@@ -25,10 +25,15 @@
 .navLinks a:not(.btn) {
     font-weight: 500;
     color: var(--text-dark);
-    transition: color 0.2s;
+    padding: 8px 20px;
+    border-radius: 50px;
+    /* Rounded pill shape */
+    transition: all 0.2s ease;
 }
 
 .navLinks a:not(.btn):hover {
+    background-color: #f1f5f9;
+    /* Sounded gray button */
     color: var(--primary-blue);
 }
 

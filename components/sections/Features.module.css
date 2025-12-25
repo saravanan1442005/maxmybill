@@ -40,6 +40,127 @@
     grid-area: image;
 }
 
+/* Decorative Blobs in Top/Bottom Spacing - Desktop Only */
+@media (min-width: 969px) {
+    .features {
+        position: relative;
+    }
+
+    /* Top spacing blob - left */
+    .features::before {
+        content: '';
+        position: absolute;
+        width: 400px;
+        height: 400px;
+        background: radial-gradient(circle, rgba(47, 124, 246, 0.4) 0%, transparent 70%);
+        border-radius: 50%;
+        top: 50px;
+        left: -100px;
+        z-index: 0;
+        animation: blobPulse 4s ease-in-out infinite;
+    }
+
+    /* Top spacing blob - right */
+    .features::after {
+        content: '';
+        position: absolute;
+        width: 350px;
+        height: 350px;
+        background: radial-gradient(circle, rgba(255, 182, 193, 0.45) 0%, transparent 70%);
+        border-radius: 50%;
+        top: 100px;
+        right: -80px;
+        z-index: 0;
+        animation: blobPulse 5s ease-in-out infinite;
+        animation-delay: 1s;
+    }
+
+    .grid {
+        position: relative;
+    }
+
+    /* Bottom spacing blobs */
+    .grid::before {
+        content: '';
+        position: absolute;
+        width: 300px;
+        height: 300px;
+        background: radial-gradient(circle, rgba(144, 238, 144, 0.43) 0%, transparent 70%);
+        border-radius: 50%;
+        bottom: -150px;
+        left: 10%;
+        z-index: 0;
+        animation: blobPulse 4.5s ease-in-out infinite;
+        animation-delay: 0.5s;
+    }
+
+    .grid::after {
+        content: '';
+        position: absolute;
+        width: 250px;
+        height: 250px;
+        background: radial-gradient(circle, rgba(255, 215, 0, 0.4) 0%, transparent 70%);
+        border-radius: 50%;
+        bottom: -100px;
+        right: 15%;
+        z-index: 0;
+        animation: blobPulse 5.5s ease-in-out infinite;
+        animation-delay: 2s;
+    }
+
+    .featureCard,
+    .featureCardReverse {
+        position: relative;
+        z-index: 1;
+    }
+
+    /* Additional blobs around Lightning Fast Billing (middle section) */
+    .featureCardReverse::before {
+        content: '';
+        position: absolute;
+        width: 280px;
+        height: 280px;
+        background: radial-gradient(circle, rgba(102, 187, 255, 0.37) 0%, transparent 70%);
+        border-radius: 50%;
+        top: -120px;
+        right: -60px;
+        z-index: -1;
+        animation: blobPulse 5.2s ease-in-out infinite;
+        animation-delay: 1.8s;
+    }
+
+    .featureCardReverse::after {
+        content: '';
+        position: absolute;
+        width: 320px;
+        height: 320px;
+        background: radial-gradient(circle, rgba(255, 140, 0, 0.35) 0%, transparent 70%);
+        border-radius: 50%;
+        bottom: -100px;
+        left: -70px;
+        z-index: -1;
+        animation: blobPulse 4.8s ease-in-out infinite;
+        animation-delay: 0.8s;
+    }
+
+
+    /* Slow blinking animation */
+    @keyframes blobPulse {
+
+        0%,
+        100% {
+            opacity: 0.4;
+            transform: scale(1);
+        }
+
+        50% {
+            opacity: 1;
+            transform: scale(1.05);
+        }
+    }
+}
+
+
 .iconBox {
     background: #e6f0fa;
     width: 60px;
@@ -76,6 +197,19 @@
     content: '✓';
     color: var(--primary-blue);
     font-weight: bold;
+}
+
+.featureIllustration {
+    margin-top: 2.5rem;
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.inlineIllustration {
+    object-fit: contain;
+    filter: drop-shadow(0 10px 40px rgba(0, 0, 0, 0.1));
+    border-radius: 30px;
 }
 
 .imageContainer {

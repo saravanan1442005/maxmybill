@@ -126,8 +126,8 @@ export default function ContactForm() {
                     {/* Right Side - Illustration */}
                     <div className={styles.illustrationSection}>
                         <img
-                            src="/assets/contact-illustration.png"
-                            alt="Contact Illustration"
+                            src="/assets/contact-support-illustration.png"
+                            alt="Customer Support"
                             className={styles.illustration}
                         />
                         <div className={styles.decorativeCircle1}></div>

@@ -14,7 +14,15 @@ export default function Features() {
                     {/* Feature 1 */}
                     <div className={styles.featureCard}>
                         <div className={styles.textWrapper}>
-                            <div className={styles.iconBox}>📦</div>
+                            <div className={styles.featureIllustration}>
+                                <Image
+                                    src="/assets/invoice-management-illustration.png"
+                                    alt="Invoice Management"
+                                    width={350}
+                                    height={350}
+                                    className={styles.inlineIllustration}
+                                />
+                            </div>
                             <h3>Smart Inventory & Stock</h3>
                             <p>Never run out of stock again. Track products, categories, and stock levels in real-time.
                                 Get alerts for low stock items and manage multiple categories effortlessly.</p>
@@ -48,7 +56,6 @@ export default function Features() {
                     {/* Feature 2 */}
                     <div className={styles.featureCardReverse}>
                         <div className={styles.textWrapper}>
-                            <div className={styles.iconBox}>⚡</div>
                             <h3>Lightning Fast Billing</h3>
                             <p>Generate professional invoices in under 10 seconds. Search products by name or barcode, apply discounts, and print via thermal printers instantly.</p>
                             <ul className={styles.featureList}>
@@ -56,6 +63,15 @@ export default function Features() {
                                 <li>Thermal Printer Support</li>
                                 <li>GST & VAT Compliant</li>
                             </ul>
+                            <div className={styles.featureIllustration}>
+                                <Image
+                                    src="/assets/business-management-illustration.jpg"
+                                    alt="Business Management"
+                                    width={350}
+                                    height={350}
+                                    className={styles.inlineIllustration}
+                                />
+                            </div>
                         </div>
                         <div className={styles.imageContainer}>
                             <Image
@@ -81,7 +97,15 @@ export default function Features() {
                     {/* Feature 3 */}
                     <div className={styles.featureCard}>
                         <div className={styles.textWrapper}>
-                            <div className={styles.iconBox}>⚙️</div>
+                            <div className={styles.featureIllustration}>
+                                <Image
+                                    src="/assets/tax-management-illustration.jpg"
+                                    alt="Tax Management"
+                                    width={350}
+                                    height={350}
+                                    className={styles.inlineIllustration}
+                                />
+                            </div>
                             <h3>Powerful Control</h3>
                             <p>Complete control over your business settings. Customize tax rates like GST/VAT, configure printers via Bluetooth, and manage business profiles.</p>
                             <ul className={styles.featureList}>
